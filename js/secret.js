@@ -72,14 +72,11 @@ window.onload = function (){
 
 		//AddEventListener para cuando hacemos click en el botón <<reinici>>
 		comprueba.addEventListener("click", comprobar, false);       
-		
 	}
-
 
 	//--------------------------------------------------------------------//
 	//---Función que nos va a permitir añadir la función <seleccionat>----//
 	//--------------------------------------------------------------------//
-
 	function dobleClick(e){
 		//Deseleccionamos el objeto seleccionado
 		deseleccionar();
@@ -102,7 +99,7 @@ window.onload = function (){
 	}
 
 	//Función que nos ayudará a quitar la clase <<seleccionat>>
-	function deseleccionar(e){
+	function deseleccionar(){
 		//Creamos una variable que nos permite conocer la posición donde se encuentra seleccionat
 		let seleccionat = document.getElementsByClassName("seleccionat")[0];
 		seleccionat.classList.remove("seleccionat");
@@ -112,7 +109,6 @@ window.onload = function (){
 	//--------------------------------------------------------------------//
 	//------Función que nos va a permitir añadir la clase <sobre>---------//
 	//--------------------------------------------------------------------//
-
 	function ratonEncima(e){
 		//Creamos un array que nos irá almacenando por donde pasa el ratón y le irá añadiendo 
 		//la clase <sobre>
