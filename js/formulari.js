@@ -20,7 +20,7 @@ function comprueba(){
         
     //Si el código no está vacío
     }else{				
-        compruebaCodi(code);  
+        compruebaCodi();  
     }
 
 }
