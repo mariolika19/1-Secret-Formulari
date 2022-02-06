@@ -54,7 +54,7 @@ window.onload = function () {
 		tres.addEventListener("dblclick", dobleClick, false);
 		cuatro.addEventListener("dblclick", dobleClick, false);
 
-		//AddEventListeners para cuando pasamos el ratón por encima y lo sacamos
+		//AddEventListeners para cuando pasamos el ratón por encima o lo sacamos
 		uno.addEventListener("mouseover", ratonEncima, false);
 		uno.addEventListener("mouseleave", ratonFuera, false);
 		dos.addEventListener("mouseover", ratonEncima, false);
@@ -105,34 +105,31 @@ window.onload = function () {
 		seleccionat.classList.remove("seleccionat");
 	}
 
-
 	//--------------------------------------------------------------------//
 	//------Función que nos va a permitir añadir la clase <sobre>---------//
 	//--------------------------------------------------------------------//
 	function ratonEncima(e) {
-		//Creamos un array que nos irá almacenando por donde pasa el ratón y le irá añadiendo 
+		//Creamos un array que nos irá almacenando donde pasa el ratón y le irá añadiendo 
 		//la clase <sobre>
-		let element = e.target;
-		element.classList.add("sobre");
+		let elem = e.target;
+		elem.classList.add("sobre");
 	}
 
 	function ratonFuera(e) {
-		//Creamos un array que nos irá almacenando cuando sale el ratón y le irá quitando 
+		//Creamos un array que nos irá almacenando donde sale el ratón y le irá quitando 
 		//la clase <sobre>
 		let elem = e.target;
 		elem.classList.remove("sobre");
 	}
 
-
 	//--------------------------------------------------------------------//
 	//----Función que nos asigna un número en la clase <seleccionat>------//
 	//--------------------------------------------------------------------//
-
 	function tecla() {
 		//Creamos variable para almacenar el valor de la tecla pulsada y le damos valor numérico
 		var teclaP = parseInt(event.key);
 
-		//Agafem la cel·la seleccionada
+		//Cogemos la celda seleccionada
 		let seleccion = document.getElementsByClassName("seleccionat")[0];
 
 		//Si la tecla corresponde a un número válido
@@ -166,22 +163,14 @@ window.onload = function () {
 	//--------------------------------------------------------------------//
 	//-----------Función que nos permite dejar todo reseteado-------------//
 	//--------------------------------------------------------------------//
-
 	function reiniciar() {
-		//Calculamos nuevo número de cuatro cifras
-		creaArray();
-
-		//Vaciamos las casillas y las volvemos a poner como al principio
-		vaciar();
-
-		//Función para vaciar las líneas con intentos anteriores de la línea inferior
-		vaciaLineas();
-
-		//Volvemos a dejar el contador a 0
-		i = 0;
+		creaArray();	//Calcula un nuevo número
+		vaciar();		//Función que vacía las cajas numéricas
+		vaciaLineas();	//Función vacía líneas de intentos
+		i = 0;			//Dejamos el contador a 0
 	}
 
-	//Función que vacía las cajas de texto, para dejarlas como al principio
+	//Función que vacía las cajas de texto, para dejarlas vacías
 	function vaciar() {
 		console.log(uno.innerHTML = "?");
 		console.log(dos.innerHTML = "?");
@@ -189,7 +178,7 @@ window.onload = function () {
 		console.log(cuatro.innerHTML = "?");
 	}
 
-	//Función que deja las líneas de la barra de intentos como al principio
+	//Función que deja las líneas de la barra de intentos vacía
 	function vaciaLineas() {
 		console.log(intento1.innerHTML = "1234 : 1 / 2");
 		console.log(intento2.innerHTML = "");
@@ -197,13 +186,10 @@ window.onload = function () {
 		console.log(intento4.innerHTML = "");
 	}
 
-
 	//--------------------------------------------------------------------//
 	//---- Función que nos permite verificar si el número es correcto ----//
 	//--------------------------------------------------------------------//
 	function comprobar() {
-		// let numIntroducido
-
 		//Comprobamos que las cajas de texto no estén vacías
 		if (uno.innerHTML == "?") {
 			alert("[ERROR1]: Introduce un número válido");
